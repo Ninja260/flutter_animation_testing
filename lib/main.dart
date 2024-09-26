@@ -1,4 +1,5 @@
 import 'package:animation/circle_animation_page.dart';
+import 'package:animation/cube_3d_animation_page.dart';
 import 'package:animation/my_home_page.dart';
 import 'package:animation/square_rotate_around_y_axis.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,9 @@ class MyApp extends StatelessWidget {
             ),
         SquareRotateAroundYAxis.route: (context) => const BackableWidget(
               child: SquareRotateAroundYAxis(),
+            ),
+        Cube3DAnimationPage.route: (context) => const BackableWidget(
+              child: Cube3DAnimationPage(),
             ),
       },
     );
