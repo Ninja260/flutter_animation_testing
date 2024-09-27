@@ -1,3 +1,4 @@
+import 'package:animation/animated_container_page.dart';
 import 'package:animation/circle_animation_page.dart';
 import 'package:animation/cube_3d_animation_page.dart';
 import 'package:animation/hero_animation_page.dart';
@@ -33,6 +34,11 @@ class MyHomePage extends StatelessWidget {
         title: 'Hero animation',
         route: HeroAnimationPage.route,
       ),
+      Page(
+        title: 'Animated Container',
+        subtitle: 'Implicit animation',
+        route: AnimatedContainerPage.route,
+      )
     ];
 
     return SafeArea(
@@ -54,6 +60,11 @@ class MyHomePage extends StatelessWidget {
                         title: Text(
                           page.title,
                         ),
+                        subtitle: page.subtitle != null
+                            ? Text(
+                                page.subtitle!,
+                              )
+                            : null,
                         onTap: () {
                           Navigator.pushNamed(
                             context,
@@ -76,9 +87,11 @@ class MyHomePage extends StatelessWidget {
 class Page {
   const Page({
     required this.title,
+    this.subtitle,
     required this.route,
   });
 
   final String title;
+  final String? subtitle;
   final String route;
 }

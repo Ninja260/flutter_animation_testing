@@ -1,3 +1,4 @@
+import 'package:animation/animated_container_page.dart';
 import 'package:animation/circle_animation_page.dart';
 import 'package:animation/cube_3d_animation_page.dart';
 import 'package:animation/hero_animation_page.dart';
@@ -52,6 +53,9 @@ class MyApp extends StatelessWidget {
             ),
         HeroAnimationPage.route: (context) => const BackableWidget(
               child: HeroAnimationPage(),
+            ),
+        AnimatedContainerPage.route: (context) => const BackableWidget(
+              child: AnimatedContainerPage(),
             ),
       },
     );
