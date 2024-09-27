@@ -1,5 +1,6 @@
 import 'package:animation/circle_animation_page.dart';
 import 'package:animation/cube_3d_animation_page.dart';
+import 'package:animation/hero_animation_page.dart';
 import 'package:animation/square_rotate_around_y_axis.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,25 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Page> pageList = const <Page>[
+      Page(
+        title: 'Circle Animation',
+        route: CircleAnimationPage.route,
+      ),
+      Page(
+        title: 'Square Rotate around Y-Axis',
+        route: SquareRotateAroundYAxis.route,
+      ),
+      Page(
+        title: 'Cube 3D Animation',
+        route: Cube3DAnimationPage.route,
+      ),
+      Page(
+        title: 'Hero animation',
+        route: HeroAnimationPage.route,
+      ),
+    ];
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -29,35 +49,18 @@ class MyHomePage extends StatelessWidget {
               Expanded(
                 child: ListView(
                   children: [
-                    ListTile(
-                      title: const Text(
-                        'Circle Animation',
+                    for (final page in pageList)
+                      ListTile(
+                        title: Text(
+                          page.title,
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            page.route,
+                          );
+                        },
                       ),
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          CircleAnimationPage.route,
-                        );
-                      },
-                    ),
-                    ListTile(
-                      title: const Text('Square Rotate around Y-Axis'),
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          SquareRotateAroundYAxis.route,
-                        );
-                      },
-                    ),
-                    ListTile(
-                      title: const Text('Cube 3D Animation'),
-                      onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          Cube3DAnimationPage.route,
-                        );
-                      },
-                    ),
                   ],
                 ),
               ),
@@ -67,4 +70,15 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+@immutable
+class Page {
+  const Page({
+    required this.title,
+    required this.route,
+  });
+
+  final String title;
+  final String route;
 }

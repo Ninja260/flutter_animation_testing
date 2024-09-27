@@ -6,6 +6,7 @@ A flutter project created while follow a tutorial series from
 - Circle animation
 - A Square rotating around Y-axis
 - Cube 3D animation
+- Hero animation with custom flight transition
 
 The project is still in progress, and more will be added more as the day goes by.
 
