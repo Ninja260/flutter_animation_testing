@@ -8,8 +8,9 @@ A flutter project created while follow a tutorial series from
 - Cube 3D animation
 - Hero animation with custom flight transition
 - AnimatedContainer (Implicit Animation)
+- Colored circle animation
 
-The project is still in progress, and more will be added more as the day goes by.
+The project is still in progress, and more will be added more as the day goes on.
 
 ## Getting Started
 

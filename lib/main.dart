@@ -1,5 +1,6 @@
 import 'package:animation/animated_container_page.dart';
 import 'package:animation/circle_animation_page.dart';
+import 'package:animation/color_circle_page.dart';
 import 'package:animation/cube_3d_animation_page.dart';
 import 'package:animation/hero_animation_page.dart';
 import 'package:animation/my_home_page.dart';
@@ -57,6 +58,9 @@ class MyApp extends StatelessWidget {
         AnimatedContainerPage.route: (context) => const BackableWidget(
               child: AnimatedContainerPage(),
             ),
+        ColorCirclePage.route: (context) => const BackableWidget(
+              child: ColorCirclePage(),
+            )
       },
     );
   }

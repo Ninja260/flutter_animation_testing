@@ -1,5 +1,6 @@
 import 'package:animation/animated_container_page.dart';
 import 'package:animation/circle_animation_page.dart';
+import 'package:animation/color_circle_page.dart';
 import 'package:animation/cube_3d_animation_page.dart';
 import 'package:animation/hero_animation_page.dart';
 import 'package:animation/square_rotate_around_y_axis.dart';
@@ -38,6 +39,10 @@ class MyHomePage extends StatelessWidget {
         title: 'Animated Container',
         subtitle: 'Implicit animation',
         route: AnimatedContainerPage.route,
+      ),
+      Page(
+        title: 'Color Circle Animation',
+        route: ColorCirclePage.route,
       )
     ];
 
