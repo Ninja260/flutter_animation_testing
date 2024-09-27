@@ -24,6 +24,8 @@ class _CircleAnimationPageState extends State<CircleAnimationPage>
   late AnimationController _flipController;
   late Animation<double> _flipAnimation;
 
+  late Listenable _changeAnimationNotifier;
+
   @override
   void initState() {
     super.initState();
@@ -58,6 +60,11 @@ class _CircleAnimationPageState extends State<CircleAnimationPage>
         curve: Curves.bounceOut,
       ),
     );
+
+    _changeAnimationNotifier = Listenable.merge([
+      _counterClockwiseAnimationController,
+      _flipController,
+    ]);
 
     // status listener
     _counterClockwiseAnimationController.addStatusListener(
@@ -121,7 +128,7 @@ class _CircleAnimationPageState extends State<CircleAnimationPage>
       child: Scaffold(
         body: Center(
           child: AnimatedBuilder(
-            animation: _counterClockwiseAnimationController,
+            animation: _changeAnimationNotifier,
             builder: (context, _) {
               return Transform(
                 alignment: Alignment.center,
@@ -129,52 +136,31 @@ class _CircleAnimationPageState extends State<CircleAnimationPage>
                   ..rotateZ(
                     _counterClockwiseRotationAnimation.value,
                   ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AnimatedBuilder(
-                      animation: _flipController,
-                      builder: (context, _) {
-                        return Transform(
-                          alignment: Alignment.centerRight,
-                          transform: Matrix4.identity()
-                            ..rotateY(
-                              _flipAnimation.value,
-                            ),
-                          child: ClipPath(
-                            clipper:
-                                const HalfCircleClipper(side: CircleSide.left),
-                            child: Container(
-                              width: 150,
-                              height: 150,
-                              color: const Color(0xff0057b7),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                    AnimatedBuilder(
-                      animation: _flipController,
-                      builder: (context, _) {
-                        return Transform(
-                          alignment: Alignment.centerLeft,
-                          transform: Matrix4.identity()
-                            ..rotateY(
-                              _flipAnimation.value,
-                            ),
-                          child: ClipPath(
-                            clipper:
-                                const HalfCircleClipper(side: CircleSide.right),
-                            child: Container(
-                              width: 150,
-                              height: 150,
-                              color: const Color(0xffffd700),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+                child: Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()..rotateY(_flipAnimation.value),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ClipPath(
+                        clipper: const HalfCircleClipper(side: CircleSide.left),
+                        child: Container(
+                          width: 150,
+                          height: 150,
+                          color: const Color(0xff0057b7),
+                        ),
+                      ),
+                      ClipPath(
+                        clipper:
+                            const HalfCircleClipper(side: CircleSide.right),
+                        child: Container(
+                          width: 150,
+                          height: 150,
+                          color: const Color(0xffffd700),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
