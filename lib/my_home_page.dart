@@ -2,6 +2,7 @@ import 'package:animation/animated_container_page.dart';
 import 'package:animation/circle_animation_page.dart';
 import 'package:animation/color_circle_page.dart';
 import 'package:animation/cube_3d_animation_page.dart';
+import 'package:animation/custom_painter_polygon_animation_page.dart';
 import 'package:animation/hero_animation_page.dart';
 import 'package:animation/square_rotate_around_y_axis.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,11 @@ class MyHomePage extends StatelessWidget {
       Page(
         title: 'Color Circle Animation',
         route: ColorCirclePage.route,
-      )
+      ),
+      Page(
+        title: 'Custom painter polygon animation',
+        route: CustomPainterPolygonAnimationPage.route,
+      ),
     ];
 
     return SafeArea(

@@ -9,6 +9,7 @@ A flutter project created while follow a tutorial series from
 - Hero animation with custom flight transition
 - AnimatedContainer (Implicit Animation)
 - Colored circle animation
+- Shape shifting polygon animation
 
 The project is still in progress, and more will be added more as the day goes on.
 
