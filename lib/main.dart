@@ -6,6 +6,7 @@ import 'package:animation/custom_painter_polygon_animation_page.dart';
 import 'package:animation/hero_animation_page.dart';
 import 'package:animation/my_home_page.dart';
 import 'package:animation/square_rotate_around_y_axis.dart';
+import 'package:animation/three_d_drawer_animation_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -65,6 +66,9 @@ class MyApp extends StatelessWidget {
         CustomPainterPolygonAnimationPage.route: (context) =>
             const BackableWidget(
               child: CustomPainterPolygonAnimationPage(),
+            ),
+        ThreeDDrawerAnimationPage.route: (context) => const BackableWidget(
+              child: ThreeDDrawerAnimationPage(),
             ),
       },
     );

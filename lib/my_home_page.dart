@@ -5,6 +5,7 @@ import 'package:animation/cube_3d_animation_page.dart';
 import 'package:animation/custom_painter_polygon_animation_page.dart';
 import 'package:animation/hero_animation_page.dart';
 import 'package:animation/square_rotate_around_y_axis.dart';
+import 'package:animation/three_d_drawer_animation_page.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -48,6 +49,10 @@ class MyHomePage extends StatelessWidget {
       Page(
         title: 'Custom painter polygon animation',
         route: CustomPainterPolygonAnimationPage.route,
+      ),
+      Page(
+        title: '3D Drawer animation',
+        route: ThreeDDrawerAnimationPage.route,
       ),
     ];
 
