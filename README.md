@@ -11,6 +11,7 @@ A flutter project created while follow a tutorial series from
 - [Colored circle animation](https://youtu.be/gjmkicivlrg?si=cmrrO3p-AYm2nJBy)
 - [Shape shifting polygon animation](https://youtu.be/xt0LT8K7w04?si=EA46a7oTEb21QWid)
 - [3D drawer animation](https://youtu.be/9hhWjjL2Z7Q?si=qO-4TIzfvnGgTbkg)
+- [Add Prompt animation](https://youtu.be/VJbjc8smIq0?si=Kjd5ThoIeHvw2LU7)
 
 The project is still in progress, and more will be added more as the day goes on.
 
